@@ -5,11 +5,11 @@
 
 *Input sequencing data*
 
-Raw CUT&RUN data for H3K4me3, H3K9ac, H3K9me3, and H4K20me3 for female and DFT1 cells, and RNA-seq data that was up to the normalisation step in Figure 4 were obtained from experimentation performed by a previous postdoc and honours student.
+Raw CUT&RUN data for H3K4me3, H3K9ac, H3K9me3, and H4K20me3 for female and DFT1 cells, and RNA-seq data that was up to the normalisation step in Figure 4 were obtained from experimentation performed by a previous postdoc and honours student. CUT&RUN was used as it is superior to ChIP-seq due to its efficiency, cost-effectiveness, low background noise, and high resolution.
 
 *Quality control of Sequencing Data*
 
-Each of the samples underwent quality control using FastQC (v0.12.1). Analysing the per base sequence quality and per base sequence content, as well as overrepresented sequences allowed for determining where to trim the reads. Trimming was done using Trim Galore (v0.6.10). FastQC and MultiQC (v1.18) verified the trimmed reads were sufficient quality for downstream processes.
+Each of the samples underwent quality control using FastQC (v0.12.1). Analysing the per base sequence quality and per base sequence content, as well as overrepresented sequences allowed for determining where to trim the reads.  Low quality and unstable base content at the 3’ end of the resulted in the decision to trim the ends, and the presence of an overrepresented poly-G tail resulted in the addition of the --2-colour flag to account for the technical artifact that occurs due to the 2 colour method of base calling used in the sequencing technology. Trimming was done using Trim Galore (v0.6.10). FastQC and MultiQC (v1.18) verified the trimmed reads were sufficient quality for downstream processes.
 
 *Alignment to Genome*
 
